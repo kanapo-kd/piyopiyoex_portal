@@ -1,5 +1,5 @@
 <div>
-  <h2><%= @title %></h2>
+  <!-- <h2><%= @title %></h2> -->
 
   <.form
     let={f}
@@ -9,16 +9,20 @@
     phx-change="validate"
     phx-submit="save">
   
-    <%= label f, :display_name %>
-    <%= text_input f, :display_name %>
+    呼ばれたい名前
+    <%= text_input f, :display_name, class: ["input", "input-bordered", "w-full", "max-w-xs"] %>
     <%= error_tag f, :display_name %>
-  
-    <%= label f, :message %>
-    <%= textarea f, :message %>
+    <br>
+    <br>
+   イベント終了後に、楽しかったかどうか？<br>
+   piyopiyo.exにやってほしいことがあれば教えてください<br>
+   
+    <%= textarea f, :message, class: ["input", "input-bordered", "w-full", "max-w-xs", "h-48"] %>
     <%= error_tag f, :message %>
-    
-    <div>
-      <%= submit "Save", phx_disable_with: "Saving..." %>
+    <br>
+    <div calss="btn btn-success">
+      <%= submit "感想を投稿", phx_disable_with: "感想を投稿", class: ["btn", "btn-success"] %>
     </div>
+
   </.form>
 </div>

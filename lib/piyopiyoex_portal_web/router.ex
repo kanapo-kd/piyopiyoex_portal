@@ -17,10 +17,11 @@ defmodule PiyopiyoexPortalWeb.Router do
   scope "/", PiyopiyoexPortalWeb do
     pipe_through :browser
 
-    live "/", MessageLive.Index, :index
-    live "/:mode", MessageLive.Index, :index
 
     live "/messages/new", MessageLive.Index, :new
+    live "/:mode", MessageLive.Index, :index
+
+    live "/", MessageLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
